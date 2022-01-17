@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Senderscity)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Sendersaddress)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Recipientscity)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Recipientaddress)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Weight)</th>
+            <th>@Html.DisplayNameFor(model => model.GetEnumerator().Current.Date)</th>
+        </tr>
+    </thead>
+    @foreach (Order entity in Model)
+    {
+<tr>
+    <td>@entity.Id</td>
+    <td>@entity.Senderscity</td>
+    <td>@entity.Sendersaddress</td>
+    <td>@entity.Recipientscity</td>
+    <td>@entity.Recipientaddress</td>
+    <td>@entity.Weight</td>
+    <td>@entity.Date.Value.ToShortDateString()</td>
+</tr>
+    }
+</table>

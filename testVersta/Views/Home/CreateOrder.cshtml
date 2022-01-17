@@ -1,0 +1,23 @@
+﻿@model Order
+<form asp-area="" asp-controller="Home" asp-action="CreateOrder" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
+    @Html.LabelFor(m => m.Senderscity)
+    @Html.TextBoxFor(m => m.Senderscity)
+    <br />
+    @Html.LabelFor(m => m.Sendersaddress)
+    @Html.TextBoxFor(m => m.Sendersaddress)
+    <br />
+    @Html.LabelFor(m => m.Recipientscity)
+    @Html.TextBoxFor(m => m.Recipientscity)
+    <br />
+    @Html.LabelFor(m => m.Recipientaddress)
+    @Html.TextBoxFor(m => m.Recipientaddress)
+    <br />
+    @Html.LabelFor(m => m.Weight)
+    @Html.TextBoxFor(m => m.Weight)
+    <br />
+    @Html.LabelFor(m => m.Date)
+    @Html.TextBoxFor(m => m.Date, new { type = "date" })
+    <br />
+    <button type="submit">Сохранить</button>
+</form>
